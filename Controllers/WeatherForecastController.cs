@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-namespace loto_react.Controllers;
+using Loto.Models;
+namespace Loto.Controllers;
 
 [ApiController]
 [Route("[controller]")]

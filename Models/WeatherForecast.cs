@@ -1,5 +1,4 @@
-/*
-namespace loto_react;
+namespace Loto.Models;
 
 public class WeatherForecast
 {
@@ -11,4 +10,3 @@ public class WeatherForecast
 
     public string? Summary { get; set; }
 }
-*/

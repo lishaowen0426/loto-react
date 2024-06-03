@@ -1,0 +1,6 @@
+{
+    "[csharp]": {
+        "remove-empty-lines.allowedNumberOfEmptyLines": 3,
+        "remove-empty-lines.runOnSave": true
+    }
+}
