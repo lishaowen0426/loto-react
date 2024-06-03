@@ -9,18 +9,17 @@
         --color-action-button: 0 0 0;
     }
     html {
-        height: 100vh;
         width: 100vw;
     }
 
     body {
-        height: 100%;
         width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     #root {
-        height: 100%;
         width: 100%;
-        min-height: 100vh;
     }
 }
