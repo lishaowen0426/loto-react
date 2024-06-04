@@ -9,7 +9,7 @@ import {
 } from "react";
 
 import { cn } from "../lib";
-import { motion, useAnimate } from "framer-motion";
+import { motion, transform, useAnimate } from "framer-motion";
 
 interface DigitRef {
     top: RefObject<HTMLSpanElement>;
@@ -39,20 +39,12 @@ const Digit = forwardRef<
         },
         []
     );
+
+    useEffect(() => {}, []);
     return (
-        <div ref={scope}>
-            <span ref={topRef} className={cn("top hidden")}>
-                {from}
-            </span>
-            <span ref={topSlideRef} className={cn("top-slide hidden")}>
-                {from}
-            </span>
-            <div ref={bottomRef} className={cn("bottom-slide hidden")}>
-                <span>{to}</span>
-            </div>
-            <div ref={bottomSlideRef} className={cn("bottom")}>
-                <span>{from}</span>
-            </div>
+        <div ref={scope} className="flip-card flip">
+            <div className="top">5</div>
+            <div className="bottom">5</div>
         </div>
     );
 });
@@ -65,7 +57,7 @@ const Figure = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
         useEffect(() => {
             const interval = setInterval(() => {
                 setValue((v) => {
-                    if (v == 0) {
+                    if (v === 0) {
                         return 9;
                     } else {
                         return v - 1;
@@ -86,4 +78,4 @@ const Figure = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
     }
 );
 
-export { Figure };
+export { Figure, Digit };
