@@ -18,7 +18,6 @@ import {
     type BentoCardProps,
 } from "./magicui/bento-grid";
 import { cn } from "../lib";
-import { Figure } from "./NumberScroll";
 
 const Tools: BentoCardProps[] = [
     {
@@ -168,7 +167,6 @@ const Home: FunctionComponent<ComponentPropsWithoutRef<"div">> = (props) => {
                     浏览工具
                     <ChevronRight size="16" />
                 </NavButton>
-                <Figure />
             </div>
             <div className="w-full flex flex-col items-center" ref={toolRef}>
                 <ToolPointer container={containerRef} />

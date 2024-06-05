@@ -33,29 +33,19 @@
     }
 }
 
-.figure {
-    --height: 100px;
-    --width: 100px;
-    position: relative;
-    height: var(--height);
-    width: var(--width);
-    border-radius: 8px;
-    box-shadow: 4px 4px 8px 2px rgb(0 0 0/0.04);
-
-    & * {
-        box-sizing: border-box;
-    }
-}
-
 .flip-card {
     position: relative;
     width: fit-content;
-    font-size: 64px;
+    font-size: inherit;
     display: inline-flex;
     flex-direction: column;
     color: #de4848;
     border-radius: 0.1em;
     box-shadow: 0 2px 3px 0 rgb(0 0 0/0.2);
+
+    & * {
+        box-sizing: border-box;
+    }
 
     & .top,
     & .bottom,
@@ -99,7 +89,7 @@
 .flip-card .before-top {
     position: absolute;
     width: 100%;
-    animation: flip-top 250ms ease-in;
+    animation: flip-top 500ms ease-in 1s forwards;
     transform-origin: bottom;
     -webkit-transform-origin: bottom;
 }
@@ -107,7 +97,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    animation: flip-bottom 250ms ease-out 250ms;
+    animation: flip-bottom 500ms ease-out 1.5s forwards;
     transform-origin: top;
     -webkit-transform-origin: top;
     transform: rotateX(90deg);

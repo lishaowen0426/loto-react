@@ -11,7 +11,7 @@ import { useGSAP } from "@gsap/react";
 import "./global.css";
 import Home from "./components/Home";
 import RootLayout from "./components/RootLayout";
-import { Figure, Digit } from "./components/NumberScroll";
+import { Number, Digit } from "./components/NumberScroll";
 
 gsap.registerPlugin(useGSAP);
 
@@ -19,8 +19,11 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<RootLayout />}>
             <Route path="/home" element={<Home />} />
-            <Route path="/figure" element={<Figure />} />
-            <Route path="/digit" element={<Digit from={6} to={8} />} />
+            <Route
+                path="/figure"
+                element={<Number from={21} to={47} className="text-[32px]" />}
+            />
+            <Route path="/digit" element={<Digit from={4} to={8} />} />
         </Route>
     )
 );
