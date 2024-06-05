@@ -21,7 +21,6 @@
 
     #root {
         width: 100%;
-        height: 100%;
     }
 }
 
@@ -153,9 +152,24 @@
     text-align: center;
     border: 1px solid rgb(0 0 0 /0.1);
     border-radius: 5px;
-    color: black;
-    background-color: while;
+    color: white;
+    background-color: black;
     box-shadow: 0 2px 3px 0 rgb(0 0 0/0.2);
+}
+
+.number-input {
+    width: 48px;
+    line-height: 1;
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid rgb(0 0 0 /0.1);
+    border-radius: 5px;
+}
+
+.number-input-pad {
+    display: grid;
+    grid-template-columns: repeat(6, 56px);
+    row-gap: 5px;
 }
 
 .number-button:disabled {
@@ -171,5 +185,10 @@
     row-gap: 5px;
 }
 
-@media (min-width: 1028px) {
+.number-pad-button {
+    width: 48px;
+    height: 48px;
+    position: sticky;
+    margin-left: auto;
+    bottom: 60px;
 }
