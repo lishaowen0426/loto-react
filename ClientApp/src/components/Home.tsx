@@ -18,6 +18,7 @@ import {
     type BentoCardProps,
 } from "./magicui/bento-grid";
 import { cn } from "../lib";
+import { NumberScroll } from "./NumberScroll";
 
 const Tools: BentoCardProps[] = [
     {
@@ -152,7 +153,7 @@ const Home: FunctionComponent<ComponentPropsWithoutRef<"div">> = (props) => {
         if (height == null || toolRef.current == null) {
             return;
         }
-        toolRef.current.style.marginTop = `calc(100vh - ${height}px - 9rem)`;
+        toolRef.current.style.marginTop = `calc(100svh - ${height}px - 5rem)`;
     }, [height]);
     return (
         <div className="" ref={containerRef}>
@@ -163,10 +164,12 @@ const Home: FunctionComponent<ComponentPropsWithoutRef<"div">> = (props) => {
                 <div className="w-full min-h-[2rem]"></div>
                 <SecondaryTitle />
                 <div className="w-full min-h-[5rem]"></div>
-                <NavButton className="text-white text-xl font-semibold h-10">
+                <NavButton className="hidden text-white text-xl font-semibold h-10">
                     浏览工具
                     <ChevronRight size="16" />
                 </NavButton>
+                <div className="w-full min-h-[2rem]"></div>
+                <NumberScroll className="hidden desktop:grid" />
             </div>
             <div className="w-full flex flex-col items-center" ref={toolRef}>
                 <ToolPointer container={containerRef} />

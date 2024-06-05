@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const RootLayout = () => {
     return (
-        <div className="w-full px-[1rem] pt-[1rem] flex flex-col items-cente scroll-smooth">
+        <div className="w-full h-full px-[1rem] pt-[1rem] flex flex-col items-cente scroll-smooth">
             <Outlet />
         </div>
     );
