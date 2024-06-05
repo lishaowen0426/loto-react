@@ -27,6 +27,7 @@ const Digit = forwardRef<
     const topSlideRef = useRef<HTMLSpanElement>(null);
     const bottomRef = useRef<HTMLDivElement>(null);
     const bottomSlideRef = useRef<HTMLDivElement>(null);
+    console.log(from);
     useImperativeHandle(
         ref,
         () => {
@@ -43,8 +44,10 @@ const Digit = forwardRef<
     useEffect(() => {}, []);
     return (
         <div ref={scope} className="flip-card flip">
-            <div className="top">5</div>
-            <div className="bottom">5</div>
+            <div className="before-top">{from}</div>
+            <div className="top">{to}</div>
+            <div className="bottom">{from}</div>
+            <div className="after-bottom">{to}</div>
         </div>
     );
 });

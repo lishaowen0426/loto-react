@@ -59,8 +59,8 @@
 
     & .top,
     & .bottom,
-    &.flip::before,
-    &.flip::after {
+    & .before-top,
+    & .after-bottom {
         height: 0.75em;
         line-height: 1;
         padding: 0.25em;
@@ -68,7 +68,7 @@
     }
 
     & .top,
-    &.flip::before {
+    & .before-top {
         background-color: #f7f7f7;
         border-top-right-radius: 0.1em;
         border-top-left-radius: 0.1em;
@@ -76,7 +76,7 @@
     }
 
     & .bottom,
-    &.flip::after {
+    & .after-bottom {
         background-color: white;
         display: flex;
         align-items: flex-end;
@@ -96,18 +96,16 @@
     }
 }
 
-.flip-card.flip::before {
+.flip-card .before-top {
     position: absolute;
-    content: "5";
     width: 100%;
     animation: flip-top 250ms ease-in;
     transform-origin: bottom;
     -webkit-transform-origin: bottom;
 }
-.flip-card.flip::after {
+.flip-card.flip .after-bottom {
     position: absolute;
     bottom: 0;
-    content: "6";
     width: 100%;
     animation: flip-bottom 250ms ease-out 250ms;
     transform-origin: top;

@@ -20,7 +20,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<RootLayout />}>
             <Route path="/home" element={<Home />} />
             <Route path="/figure" element={<Figure />} />
-            <Route path="/digit" element={<Digit from={4} to={8} />} />
+            <Route path="/digit" element={<Digit from={6} to={8} />} />
         </Route>
     )
 );
