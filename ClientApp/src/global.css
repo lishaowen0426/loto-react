@@ -9,12 +9,12 @@
         --color-action-button: 0 0 0;
     }
     html {
-        width: 100vw;
+        width: 100%;
     }
 
     body {
         width: 100%;
-        min-height: 100vh;
+        min-height: 100svh;
         overflow-x: hidden;
         overflow-y: auto;
     }
@@ -141,34 +141,58 @@
     */
 }
 
-/*https://www.youtube.com/watch?v=p_6IuhmBsfc*/
 .number-button {
     position: relative;
-    width: 48px;
-    line-height: 48px;
     font-size: 2rem;
+    line-height: 1;
     font-weight: 300;
+    aspect-ratio: 1/1;
+    text-align: center;
+    color: white;
+    background-color: black;
+    aspect-ratio: 1/1;
+}
+
+.arrow-button,
+.delete-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.number-input {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 1;
     aspect-ratio: 1/1;
     text-align: center;
     border: 1px solid rgb(0 0 0 /0.1);
     border-radius: 5px;
-    color: white;
-    background-color: black;
-    box-shadow: 0 2px 3px 0 rgb(0 0 0/0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.number-input {
+.number-input[data-status="focused"] {
+    border-color: rgb(0 0 0);
+    box-shadow: inset -3px -3px 5px rgb(0 0 0/0.2);
+}
+
+.number-label {
     width: 48px;
-    line-height: 1;
-    font-size: 2rem;
+    height: 48px;
+    line-height: 48px;
     text-align: center;
-    border: 1px solid rgb(0 0 0 /0.1);
-    border-radius: 5px;
 }
 
 .number-input-pad {
+    width: 100%;
+    max-width: 400px;
     display: grid;
-    grid-template-columns: repeat(6, 56px);
+    column-gap: 3px;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: space-between;
     row-gap: 5px;
 }
 
@@ -178,17 +202,43 @@
 }
 
 .number-pad {
-    width: 100%;
-    max-width: 430px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
     row-gap: 5px;
+    width: 100%;
+    max-width: 400px;
+    display: grid;
+    column-gap: 3px;
+    grid-template-columns: repeat(7, 1fr);
+
+    justify-content: space-between;
+
+    & button {
+        width: 100%;
+        border: 1px solid rgb(0 0 0 /0.1);
+        border-radius: 5px;
+        box-shadow: 0 2px 3px 0 rgb(0 0 0/0.2);
+    }
+
+    & .last-row {
+        width: 100%;
+        grid-column: 1 / span 7;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 1fr 1.5fr 1.5fr 2fr;
+    }
 }
 
-.number-pad-button {
-    width: 48px;
-    height: 48px;
-    position: sticky;
-    margin-left: auto;
-    bottom: 60px;
+.post-button-group {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    & button {
+        font-size: 1.5rem;
+        font-weight: 600;
+        height: 48px;
+        flex-grow: 1;
+        border-radius: 5px;
+    }
 }
