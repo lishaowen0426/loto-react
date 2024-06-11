@@ -1,6 +1,7 @@
 import { AlignStartVertical, CircleUser } from "lucide-react";
 import { forwardRef, ComponentPropsWithoutRef } from "react";
 import { IconButton } from "./Button";
+import Login from "./Login";
 const Nav = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
     (props, ref) => {
         return (
@@ -8,9 +9,7 @@ const Nav = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
                 <IconButton>
                     <AlignStartVertical />
                 </IconButton>
-                <IconButton>
-                    <CircleUser />
-                </IconButton>
+                <Login />
             </div>
         );
     }

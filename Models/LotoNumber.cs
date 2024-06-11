@@ -1,4 +1,5 @@
-﻿namespace Loto.Models
+﻿
+namespace Loto.Models
 {
     public class LotoNumber
     {
@@ -32,12 +33,14 @@
 
 
 
+
+
     public class PaginationViewModel<T>
     {
         public List<LotoNumber> Items { get; set; }
         public int PageNumber { get; set; }
         public int TotalPages { get; set; }
-       
+
     }
     public class NumberOccurrence
     {
@@ -72,7 +75,7 @@
         public int Number6 { get; set; }
         public int Number7 { get; set; }
         public int maxMinDifference { get; set; }
-       
+
     }
 
 

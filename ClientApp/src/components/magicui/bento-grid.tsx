@@ -1,6 +1,7 @@
 import { cn } from "../../lib";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { ComponentPropsWithoutRef, ReactNode, forwardRef } from "react";
+import { Link } from "react-router-dom";
 
 const BentoGrid = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<"div">>(
     ({ className, children, ...props }, ref) => {
@@ -63,10 +64,10 @@ const BentoCard = ({
             )}
         >
             <button className="pointer-events-auto">
-                <a href={href} className="flex flex-row items-center text-sm">
+                <Link to={href} className="flex flex-row items-center text-sm">
                     {cta}
                     <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
             </button>
         </div>
         <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />

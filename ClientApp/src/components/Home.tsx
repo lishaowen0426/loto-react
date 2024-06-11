@@ -24,7 +24,7 @@ const Tools: BentoCardProps[] = [
     {
         name: "当選チェッカ",
         description: "快速查看你的号码是否中奖",
-        href: "/",
+        href: "/checknumber",
         cta: "使用工具",
         className: "",
     },

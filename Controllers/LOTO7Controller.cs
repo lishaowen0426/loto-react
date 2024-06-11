@@ -7,7 +7,7 @@ namespace Loto.Controllers
 
     using CheckNumberResult = (bool, decimal);
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class LOTO7Controller : ControllerBase
     {
         private readonly ILogger<LOTO7Controller> _logger;
@@ -17,10 +17,17 @@ namespace Loto.Controllers
             _logger = logger;
             _lotoNumberService = dataService;
         }
+        [HttpGet]
+        [Route("latestnumber")]
+        public ActionResult<LotoNumber> GetLatestNumbers(){
+            LotoNumber latestLotoNumber = _lotoNumberService.GetLatestLotoNumber();
+            return latestLotoNumber;
+        }
         [HttpPost]
-        [Route("api/checknumbers")]
-        public ActionResult<CheckNumberResult[]> PostCheckNumbers([FromForm] List<List<int>> numbers)
+        [Route("checknumbers")]
+        public ActionResult<string> PostCheckNumbers()
         {
+            /*
             LotoNumber LatestLotoNumber = new LotoNumber();
             // 获取最近一期的中奖号码
             LotoNumber latestLotoNumber = _lotoNumberService.GetLatestLotoNumber();
@@ -62,7 +69,7 @@ namespace Loto.Controllers
                     prizeLevel = 1; // 1等
                     prizeAmount = latestLotoNumber.Prize;
                 }
-                else if (matchWinningNumbers == 6 && matchBonusNumbers >= 1)
+                else if (matchWinningNumbers == 6 && matchBonusNumbers == 1)
                 {
                     prizeLevel = 2; // 2等
                     prizeAmount = latestLotoNumber.SecondPrizeAmount;
@@ -107,6 +114,8 @@ namespace Loto.Controllers
             //string resultString = string.Join("\n", results);
             // 返回到视图，并带上设置好的ViewBag数据
             return result;
+            */
+            return "OK";
         }
     }
 

@@ -6,6 +6,7 @@ const IconButton = forwardRef<
 >(({ className, children, ...props }, ref) => {
     return (
         <button
+            ref={ref}
             type="button"
             className={cn(
                 "w-[36px] h-[36px]  rounded-full flex items-center justify-center bg-white/5",

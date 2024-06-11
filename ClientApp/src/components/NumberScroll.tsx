@@ -99,6 +99,7 @@ const Group = forwardRef<
                 .map((_, index) => {
                     return (
                         <Digit
+                            key={`digit${index}`}
                             isBonus={isBonus}
                             sequence={sequence.map((n) => getDigit(n, index))}
                         />
